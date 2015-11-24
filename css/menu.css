@@ -1,0 +1,60 @@
+/* General styles for all menus */
+.garage-menu {
+	position: fixed;
+    padding: 2.875em 0.5em 1.875em 0.5em;
+}
+
+.garage-menu ul {
+    padding-left:0em;
+}
+
+#showFilterMenu {
+    margin-top: 42px;
+}
+/* Orientation-dependent styles for the content of the menu */
+
+.garage-vertical {
+	width: 240px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+.garage-vertical li {
+    display: block;
+	padding: 1em;
+    overflow: auto;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.garage-left {
+	left: -240px;
+}
+
+.garage-left.garage-open {
+	left: 0px;
+}
+
+/* Push classes applied to the body */
+
+.garage-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+
+.garage-push-toright {
+	left: 240px;
+}
+
+/* Transitions */
+
+.garage-menu,
+.garage-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}

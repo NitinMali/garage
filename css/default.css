@@ -1,0 +1,122 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
+
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    color: #47a3da;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000;
+}
+
+.main,
+.container > header {
+	width: 90%;
+	max-width: 69em;
+	margin: 0 auto;
+}
+
+/* List view */
+.list-view {
+    margin: -15px;
+}
+
+.list-view ul {
+    list-style-type: none;
+    width: 80%;
+}
+
+.list-view li {
+    padding: 10px;
+    overflow: auto;
+    background: #eee;
+    margin-bottom: 10px;
+
+    list-style: none;
+}
+
+.list-view li:hover {
+    background: #CCC;
+    cursor: pointer;
+    color: #fff;
+}
+
+.list-view .listHeader {
+    background-color: #258ecd;
+    color:#fff;
+    cursor: none;
+}
+
+.list-view .listHeader:hover {
+    background: #258ecd;
+    cursor: default;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+.headerNav {
+    padding:8px;
+}
+.floatLeft {
+    float:left;
+}
+.floatRight {
+    float:right;
+}
+
+.padding-top10 {
+    display: block;
+    padding-top:8px;
+}
+
+.labelText {
+    font-weight: bold;
+}
+
+.filterMenu {
+    font-size: 20px;
+    color: #000;
+}
+
+.container {
+    margin-left:10px;
+}
+.container > header {
+	padding: 2.875em 1.875em 1.875em;
+}
+
+.container > header h1 {
+	font-size: 2.125em;
+	line-height: 1.3;
+	margin: 0 0 0.6em 0;
+	float: left;
+	font-weight: 400;
+}
+
+.container > header nav {
+	text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+	.container > header h1,
+	.container > header nav {
+		float: none;
+	}
+	.container > header h1 {
+		text-align: center;
+	}
+
+	.container > header nav {
+		margin: 0 auto;
+	}
+}

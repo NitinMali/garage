@@ -1,0 +1,47 @@
+form {
+    max-width: 500px;
+    padding: 2.875em 1.875em 1.875em;
+}
+form label {
+    display: block;
+    margin: 0 0 15px;
+}
+form label>span {
+    float: left;
+    width: 20%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #888;
+}
+input[type="text"], select {
+    border: 1px solid #000;
+    font-size:16px;
+    height: 50px;
+    padding: 3px 3px 3px 5px;
+    width: 100%;
+}
+
+select {
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 70%;
+    height: 35px;
+    line-height: 25px;
+}
+button {
+    background: #E27575;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    cursor: pointer;
+}
+button:hover {
+    background: #CF7A7A
+}
+
+button[disabled] {
+    background: #ddd;
+}

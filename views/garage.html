@@ -1,0 +1,28 @@
+<div class="list-view">
+            <ul>
+                <li class="listHeader">
+                    <span class="floatLeft headerNav">
+                        <span>{{recordsFrom}}/{{recordsTill}}</span> Of <span>{{vehicles.length}}</span> vehicles
+                    </span>
+                    <span class="floatRight">
+                        <button class="fa fa-2x fa-arrow-circle-o-left headerNav"
+                           ng-disabled="currentPage === 0"
+                           ng-click="prevRecord()"></button>
+
+                            <button ng-disabled="currentPage >= totalPages" ng-click="nextRecord()"
+                                    class="fa fa-2x fa-arrow-circle-o-right headerNav"></button>
+                    </span>
+                </li>
+                <li ng-repeat="vehicle in vehicles | pagination: currentPage*pageSize | limitTo: pageSize"
+                    ui-sref="vehicle({vehicleId:$index})">
+                    <span class="floatLeft">
+                        <span class="labelText">{{vehicle.reg}}</span>
+                        <span class="padding-top10">{{vehicle.type.name}}</span>
+                    </span>
+                    <span class="floatRight">
+                        <span class="labelText">Level {{vehicle.level.no}}</span>
+                        <span class="padding-top10">Slot {{vehicle.slot}}</span>
+                    </span>
+                </li>
+            </ul>
+</div>

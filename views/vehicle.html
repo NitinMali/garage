@@ -1,0 +1,30 @@
+<form action="" method="post" class="smart-green">
+    <p><b>{{notification}}</b></p>
+    <p>
+        <label>
+            <span>Vehicle Reg Number</span>
+            <input type="text" ng-model="vehicleDetails.reg" placeholder="Vehicle registeration number">
+        </label>
+
+        <label><span>Type</span><select ng-model="vehicleDetails.typeId">
+            <option value="1">Car</option>
+            <option value="2">Motorbike</option>
+        </select></label>
+
+        <label><span>Level({{currentParking.level}})</span><select ng-model="vehicleDetails.levelNo">
+            <option value="">-- Currently at slot {{currentParking.slot}} on Level {{currentParking.level}} --</option>
+            <option ng-repeat="level in levels" value="{{level.no}}">Level {{level.no}}</option>
+        </select></label>
+
+
+        <label><span>Slot({{currentParking.slot}})</span><select ng-model="vehicleDetails.slot">
+            <option value="">-- Select slot --</option>
+            <option ng-repeat="slot in slots" value="{{slot}}">{{slot}}</option>
+        </select></label>
+
+        <label><span>&nbsp;</span>
+            <button ng-click="updateVehicle()" value="Save">Save</button>
+            <button class="button" ng-click="exitVehicle()">Exit-></button>
+        </label>
+    </p>
+</form>

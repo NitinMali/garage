@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="garage">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage</title>
+    <link rel="stylesheet" type="text/css" href="css/default.css"/>
+    <link rel="stylesheet" type="text/css" href="css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/form.css"/>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+
+
+</head>
+<body class="garage-push garage-push-toright">
+
+<nav class="garage-menu garage-vertical garage-left garage-open" id="filterMenu">
+    <div ui-view="filter"></div>
+</nav>
+
+<div class="container">
+    <i class="fa fa-bars fa-2x" id="showFilterMenu"></i>
+    <header class="clearfix">
+        <h1><i class="fa fa-bus fa-2x headerNav"></i>Garage</h1>
+
+
+        <nav>
+            <i ui-sref="vehicle({vehicleId:'new'})"
+               class="fa fa-plus-square-o headerNav"> New </i> |
+            <i ui-sref="/"
+               class="fa fa-home headerNav"></i>
+        </nav>
+    </header>
+    <div class="main">
+        <div ui-view></div>
+    </div>
+</div>
+
+<!-- Angular -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
+<!-- UI-Router -->
+<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+
+<script src="lib/underscore-min.js"></script>
+
+<script src="app.js"></script>
+
+<script src="js/service/data-service.js"></script>
+
+<script src="js/controller/garage-list-controller.js"></script>
+<script src="js/controller/vehicle-controller.js"></script>
+<script src="js/controller/filter-controller.js"></script>
+
+<script src="js/filter/garage-filter.js"></script>
+
+<script src="lib/classie.js"></script>
+<script>
+    var filterMenu = document.getElementById('filterMenu'),
+            showFilterMenu = document.getElementById( 'showFilterMenu'),
+            body = document.body;
+
+    showFilterMenu.onclick = function() {
+        classie.toggle(this, 'active' );
+        classie.toggle(body, 'garage-push-toright' );
+        classie.toggle(filterMenu, 'garage-open' );
+    };
+
+    if(window.outerWidth < 600) {
+        classie.remove(filterMenu, 'garage-open' );
+        classie.remove(body, 'garage-push-toright' );
+    }
+
+</script>
+
+</body>
+</html>

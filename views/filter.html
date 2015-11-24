@@ -1,0 +1,23 @@
+<input type="text" ng-model="searchText" placeholder="Search for vehicle">
+<ul>
+    <li>
+                    <span class="floatLeft">
+                        <span class="filterMenu">Level</span>
+                        <span class="padding-top10" ng-repeat="level in levels">
+                            <input type="checkbox" ng-model="level.selected"
+                                   ng-change="applyFilter()" value="{{level.no}}">level {{level.no}}
+                            ({{level.available}} / {{level.totalSlots}}) {{levelFilter}}
+                        </span>
+                    </span>
+    </li>
+
+    <li>
+                    <span class="floatLeft">
+                        <span class="filterMenu">Type</span>
+                        <span class="padding-top10" ng-repeat="type in types">
+                            <input type="checkbox" ng-model="type.selected"
+                                   ng-change="applyFilter()" value="{{type.id}}">{{type.name}} ({{type.counter}})
+                        </span>
+                    </span>
+    </li>
+</ul>
